@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProvAndCity;
+use App\Http\Controllers\Provandcity;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Test Backend PHP DOT Hiring';
 });
 
-Route::prefix('search')->group(function() {
-    Route::get('/province', [ProvAndCity::class, 'getProvince']);
-    Route::get('/city', [ProvAndCity::class, 'getCity']);
+Route::prefix('search')->middleware('auth')->group(function() {
+    Route::get('/provinces', [Provandcity::class, 'getProvince']);
+    Route::get('/cities', [Provandcity::class, 'getCity']);
 });

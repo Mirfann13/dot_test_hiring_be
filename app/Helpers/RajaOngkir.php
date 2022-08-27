@@ -16,7 +16,7 @@ class RajaOngkir {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => array(
-            "key: 0df6d5bf733214af6c6644eb8717c92c"
+            "key: ".config('keys.rajaongkir')
         ),
         ));
 
